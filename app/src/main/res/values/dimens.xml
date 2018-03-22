@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tamanho_autor">25sp</dimen>
+    <dimen name="largura_botoes">170</dimen>
+    <dimen name="altura_botoes">120</dimen>
+    <dimen name="tamanho_fontes">20sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>
