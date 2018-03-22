@@ -7,12 +7,77 @@
     tools:context="com.rogeriocarmo.simplecrud.MainActivity">
 
     <TextView
+        android:id="@+id/idLblNomeAutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/autor"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/tamanho_fontes"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.966" />
+
+    <Button
+        android:id="@+id/idBtnCadastrar"
+        android:layout_width="@dimen/largura_botoes"
+        android:layout_height="@dimen/altura_botoes"
+        android:text="Cadastrar"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="29dp" />
+
+    <Button
+        android:id="@+id/idBtnExcluir"
+        android:layout_width="@dimen/largura_botoes"
+        android:layout_height="@dimen/altura_botoes"
+        android:text="Excluir"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="169dp" />
+
+    <Button
+        android:id="@+id/idBtnAlterar"
+        android:layout_width="@dimen/largura_botoes"
+        android:layout_height="@dimen/altura_botoes"
+        android:text="Alterar"
+        tools:layout_editor_absoluteX="198dp"
+        tools:layout_editor_absoluteY="29dp" />
+
+    <Button
+        android:id="@+id/idBtnPesquisar"
+        android:layout_width="@dimen/largura_botoes"
+        android:layout_height="@dimen/altura_botoes"
+        android:text="Pesquisar"
+        tools:layout_editor_absoluteX="198dp"
+        tools:layout_editor_absoluteY="169dp" />
+
+    <TextView
+        android:id="@+id/idLblAutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Autor:"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="@dimen/tamanho_fontes"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="468dp" />
+
+    <ImageView
+        android:id="@+id/idImgCRUD"
+        android:layout_width="250dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="38dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/crud"
+        android:cropToPadding="false"
+        app:layout_constraintBottom_toTopOf="@+id/idLblNomeAutor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnExcluir" />
 
 </android.support.constraint.ConstraintLayout>

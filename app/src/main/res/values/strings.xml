@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Simple CRUD</string>
+    <string name="autor" translatable="false">Rogerio do Carmo</string>
+    <string name="title_activity__cadastro">Activity_Cadastro</string>
 </resources>
