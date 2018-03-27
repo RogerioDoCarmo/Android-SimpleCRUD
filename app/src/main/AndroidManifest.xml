@@ -16,16 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Activity_Cadastro"
-            android:label="@string/title_activity__cadastro"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <!--activity android:name=".activity_cad"></activity!-->
+        <!-- A declaracao a seguir faz com que o sistema Android automaticamente adicione o botão Up à barra de aplicativos !-->
+        <!-- É declarado qual é o pai logico da activity! !-->
+        <activity android:name=".activity_cad"
+            android:parentActivityName=".MainActivity" >
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
+
     </application>
 
 </manifest>

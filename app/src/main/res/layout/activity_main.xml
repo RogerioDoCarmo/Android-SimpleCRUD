@@ -14,7 +14,7 @@
         android:textAlignment="textStart"
         android:textSize="@dimen/tamanho_fontes"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintHorizontal_bias="0.927"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,45 +24,73 @@
         android:id="@+id/idBtnCadastrar"
         android:layout_width="@dimen/largura_botoes"
         android:layout_height="@dimen/altura_botoes"
-        android:text="Cadastrar"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="29dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:onClick="sendMessage"
+        android:text="@string/cadastrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/idBtnExcluir"
         android:layout_width="@dimen/largura_botoes"
         android:layout_height="@dimen/altura_botoes"
-        android:text="Excluir"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="169dp" />
+        android:layout_marginBottom="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/excluir"
+        app:layout_constraintBottom_toTopOf="@+id/idImgCRUD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnCadastrar" />
 
     <Button
         android:id="@+id/idBtnAlterar"
         android:layout_width="@dimen/largura_botoes"
         android:layout_height="@dimen/altura_botoes"
-        android:text="Alterar"
-        tools:layout_editor_absoluteX="198dp"
-        tools:layout_editor_absoluteY="29dp" />
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/alterar"
+        app:layout_constraintBottom_toTopOf="@+id/idBtnPesquisar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/idBtnCadastrar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <Button
         android:id="@+id/idBtnPesquisar"
         android:layout_width="@dimen/largura_botoes"
         android:layout_height="@dimen/altura_botoes"
-        android:text="Pesquisar"
-        tools:layout_editor_absoluteX="198dp"
-        tools:layout_editor_absoluteY="169dp" />
+        android:layout_marginBottom="45dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/pesquisar"
+        app:layout_constraintBottom_toTopOf="@+id/idImgCRUD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/idBtnExcluir"
+        app:layout_constraintTop_toBottomOf="@+id/idBtnAlterar" />
 
     <TextView
         android:id="@+id/idLblAutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Autor:"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="21dp"
+        android:text="@string/autorLabel"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="@dimen/tamanho_fontes"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="468dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/idLblNomeAutor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idImgCRUD" />
 
     <ImageView
         android:id="@+id/idImgCRUD"
@@ -74,6 +102,7 @@
         android:layout_marginTop="38dp"
         android:adjustViewBounds="true"
         android:background="@drawable/crud"
+        android:contentDescription="@string/crud"
         android:cropToPadding="false"
         app:layout_constraintBottom_toTopOf="@+id/idLblNomeAutor"
         app:layout_constraintEnd_toEndOf="parent"
