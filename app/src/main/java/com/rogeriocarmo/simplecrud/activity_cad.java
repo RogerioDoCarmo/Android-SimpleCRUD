@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class activity_cad extends AppCompatActivity {
 
@@ -14,9 +15,12 @@ public class activity_cad extends AppCompatActivity {
     private EditText txtSobrenome;
     private Button btnSalvar;
     private TextView lblResultado;
+    private String novaLinha = "";
 
     private String nome;
     private String sobrenome;
+    private TextView txtContent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +35,12 @@ public class activity_cad extends AppCompatActivity {
         lblResultado = findViewById(R.id.lblResultID);
         btnSalvar = findViewById(R.id.btnSalvarID);
 
+        txtContent = findViewById(R.id.txtContent);
+
         // Set the string as the message text
         lblResultado.setText(message);
+
+        txtContent.setText(FileHelper.ReadFile(activity_cad.this));
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,14 +51,23 @@ public class activity_cad extends AppCompatActivity {
                 if (nome.isEmpty()){
 
                 }else{
-                    lblResultado.setText("Digite o nome!");
+                    lblResultado.setText("Digite o nome!"); //TODO por um toast!
                 }
 
                 if (!sobrenome.isEmpty()){
-                    lblResultado.setText("Digite o sobrenome!");
+                    lblResultado.setText("Digite o sobrenome!"); // FIXME aqui tambem
+                }
+
+                novaLinha = nome + sobrenome;
+
+                if (FileHelper.saveToFile(novaLinha)) {
+                    Toast.makeText(activity_cad.this, "Saved to file", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(activity_cad.this, "Error save file!!!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
 
     }
 }

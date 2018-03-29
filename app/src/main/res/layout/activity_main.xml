@@ -4,27 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rogeriocarmo.simplecrud.MainActivity">
+    tools:context="com.rogeriocarmo.simplecrud.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/idLblNomeAutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:text="@string/autor"
         android:textAlignment="textStart"
         android:textSize="@dimen/tamanho_fontes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.927"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.966" />
+        app:layout_constraintTop_toBottomOf="@+id/idImgCRUD"
+        tools:layout_editor_absoluteX="206dp" />
 
     <Button
         android:id="@+id/idBtnCadastrar"
         android:layout_width="@dimen/largura_botoes"
         android:layout_height="@dimen/altura_botoes"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:onClick="sendMessage"
         android:text="@string/cadastrar"
@@ -35,11 +33,9 @@
         android:id="@+id/idBtnExcluir"
         android:layout_width="@dimen/largura_botoes"
         android:layout_height="@dimen/altura_botoes"
-        android:layout_marginBottom="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
         android:text="@string/excluir"
-        app:layout_constraintBottom_toTopOf="@+id/idImgCRUD"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idBtnCadastrar" />
 
@@ -47,29 +43,22 @@
         android:id="@+id/idBtnAlterar"
         android:layout_width="@dimen/largura_botoes"
         android:layout_height="@dimen/altura_botoes"
-        android:layout_marginBottom="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
         android:text="@string/alterar"
-        app:layout_constraintBottom_toTopOf="@+id/idBtnPesquisar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/idBtnCadastrar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/idBtnPesquisar"
         android:layout_width="@dimen/largura_botoes"
         android:layout_height="@dimen/altura_botoes"
-        android:layout_marginBottom="45dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginRight="16dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
         android:text="@string/pesquisar"
-        app:layout_constraintBottom_toTopOf="@+id/idImgCRUD"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toEndOf="@+id/idBtnExcluir"
         app:layout_constraintTop_toBottomOf="@+id/idBtnAlterar" />
@@ -78,34 +67,25 @@
         android:id="@+id/idLblAutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="131dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="80dp"
         android:text="@string/autorLabel"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="@dimen/tamanho_fontes"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/idLblNomeAutor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idImgCRUD" />
+        app:layout_constraintTop_toBottomOf="@+id/idImgCRUD"
+        tools:layout_editor_absoluteX="133dp" />
 
     <ImageView
         android:id="@+id/idImgCRUD"
-        android:layout_width="250dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="21dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="38dp"
+        android:layout_width="236dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
         android:adjustViewBounds="true"
         android:background="@drawable/crud"
         android:contentDescription="@string/crud"
         android:cropToPadding="false"
-        app:layout_constraintBottom_toTopOf="@+id/idLblNomeAutor"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idBtnExcluir" />
 
