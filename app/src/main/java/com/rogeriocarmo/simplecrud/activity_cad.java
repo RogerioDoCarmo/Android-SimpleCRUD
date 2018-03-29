@@ -49,12 +49,10 @@ public class activity_cad extends AppCompatActivity {
                 sobrenome = txtSobrenome.getText().toString();
 
                 if (nome.isEmpty()){
-
-                }else{
                     lblResultado.setText("Digite o nome!"); //TODO por um toast!
                 }
 
-                if (!sobrenome.isEmpty()){
+                if (sobrenome.isEmpty()){
                     lblResultado.setText("Digite o sobrenome!"); // FIXME aqui tambem
                 }
 

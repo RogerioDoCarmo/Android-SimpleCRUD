@@ -20,8 +20,8 @@ import java.io.InputStreamReader;
  * Created by Tan on 2/18/2016.
  */
 public class FileHelper {
-    final static String fileName = "data.txt";
-    final static String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/instinctcoder/readwrite/" ;
+    final static String fileName = "dados.txt";
+    final static String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/SimpleCRUD" ;
     final static String TAG = FileHelper.class.getName();
 
     public static  String ReadFile( Context context){
@@ -53,8 +53,8 @@ public class FileHelper {
 
     public static boolean saveToFile( String data){
         try {
-            new File(path  ).mkdir();
-            File file = new File(path+ fileName);
+            new File(path).mkdir();
+            File file = new File(path + fileName);
             if (!file.exists()) {
                 file.createNewFile();
             }
@@ -68,8 +68,6 @@ public class FileHelper {
             Log.d(TAG, ex.getMessage());
         }
         return  false;
-
-
     }
 
 }
