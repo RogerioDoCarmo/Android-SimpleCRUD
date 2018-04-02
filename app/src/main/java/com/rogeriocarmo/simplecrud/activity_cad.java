@@ -1,6 +1,7 @@
 package com.rogeriocarmo.simplecrud;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.IOException;
+
+import static com.rogeriocarmo.simplecrud.FileHelper.readFromAssets;
 
 public class activity_cad extends AppCompatActivity {
 
@@ -40,7 +45,6 @@ public class activity_cad extends AppCompatActivity {
         // Set the string as the message text
         lblResultado.setText(message);
 
-        txtContent.setText(FileHelper.ReadFile(activity_cad.this));
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,14 +59,16 @@ public class activity_cad extends AppCompatActivity {
                 if (sobrenome.isEmpty()){
                     lblResultado.setText("Digite o sobrenome!"); // FIXME aqui tambem
                 }
-
+                String resultado = null;
                 novaLinha = nome + sobrenome;
-
-                if (FileHelper.saveToFile(novaLinha)) {
-                    Toast.makeText(activity_cad.this, "Saved to file", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(activity_cad.this, "Error save file!!!", Toast.LENGTH_SHORT).show();
+                try {
+                    resultado = readFromAssets(activity_cad.this,"ListaNomes.txt");
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
+                
+                txtContent.setText("lido do arquivo: " + resultado);
+
             }
         });
 
