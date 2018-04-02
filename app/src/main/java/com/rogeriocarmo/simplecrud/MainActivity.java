@@ -24,19 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*
-        try {
-            PlayWithRawFiles();
-        } catch (IOException e) {
-            Toast.makeText(getApplicationContext(),
-                    "Problems: " + e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-*/
+
   }
 
-    /**
-     * Called when the user taps the Send button
-     */
+
     public void sendMessage(View view) {
         Intent intent = new Intent(this, activity_cad.class);
         String message = "Mensagem";
@@ -44,21 +35,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
-//    public void PlayWithRawFiles() throws IOException {
-//        String str="";
-//        StringBuffer buf = new StringBuffer();
-//        InputStream is = this.getResources().openRawResource(R.assets.ListaNomes);
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-//        if (is!=null) {
-//            while ((str = reader.readLine()) != null) {
-//                buf.append(str + "\n" );
-//            }
-//        }
-//        is.close();
-//        TextView tv=(TextView)findViewById(R.id.tv1);
-//        tv.setText(buf.toString());
-//
-//
-//    }//
-//
-//}
+

@@ -14,60 +14,29 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import android.content.res.AssetManager;
+
+import static android.content.res.AssetManager.ACCESS_STREAMING;
 
 /**
  * Created by Tan on 2/18/2016.
  */
 public class FileHelper {
-    final static String fileName = "dados.txt";
-    final static String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/SimpleCRUD" ;
-    final static String TAG = FileHelper.class.getName();
 
-    public static  String ReadFile( Context context){
-        String line = null;
+    public static String readFromAssets(Context context, String filename) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(context.getAssets().open(filename)));
 
-        try {
-            FileInputStream fileInputStream = new FileInputStream (new File(path + fileName));
-            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            StringBuilder stringBuilder = new StringBuilder();
-
-            while ( (line = bufferedReader.readLine()) != null )
-            {
-                stringBuilder.append(line + System.getProperty("line.separator"));
-            }
-            fileInputStream.close();
-            line = stringBuilder.toString();
-
-            bufferedReader.close();
+        // do reading, usually loop until end of file reading
+        StringBuilder sb = new StringBuilder();
+        String mLine = reader.readLine();
+        while (mLine != null) {
+            sb.append(mLine + "\n"); // process line
+            mLine = reader.readLine();
         }
-        catch(FileNotFoundException ex) {
-            Log.d(TAG, ex.getMessage());
-        }
-        catch(IOException ex) {
-            Log.d(TAG, ex.getMessage());
-        }
-        return line;
-    }
-
-    public static boolean saveToFile( String data){
-        try {
-            new File(path).mkdir();
-            File file = new File(path + fileName);
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-            FileOutputStream fileOutputStream = new FileOutputStream(file,true);
-            fileOutputStream.write((data + System.getProperty("line.separator")).getBytes());
-
-            return true;
-        }  catch(FileNotFoundException ex) {
-            Log.d(TAG, ex.getMessage());
-        }  catch(IOException ex) {
-            Log.d(TAG, ex.getMessage());
-        }
-        return  false;
+        reader.close();
+        return sb.toString();
     }
 
 }
