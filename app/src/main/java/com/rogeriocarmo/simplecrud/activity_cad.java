@@ -62,7 +62,7 @@ public class activity_cad extends AppCompatActivity {
                 String resultado = null;
                 novaLinha = nome + sobrenome;
                 try {
-                    resultado = readFromAssets(activity_cad.this,"ListaNomes.txt");
+                    resultado = readFromAssets(activity_cad.this,"lista.xml");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
