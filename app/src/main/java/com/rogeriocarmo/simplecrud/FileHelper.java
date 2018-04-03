@@ -26,7 +26,8 @@ import static android.content.res.AssetManager.ACCESS_STREAMING;
 public class FileHelper {
 
     public static String readFromAssets(Context context, String filename) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(context.getAssets().open(filename)));
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(context.getAssets().open(filename)));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(context.getResources().openRawResource(R.raw.lista)));
 
         // do reading, usually loop until end of file reading
         StringBuilder sb = new StringBuilder();
