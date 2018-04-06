@@ -39,7 +39,6 @@ public class activity_cad extends AppCompatActivity {
         txtSobrenome = findViewById(R.id.txtSobrenomeID);
         lblResultado = findViewById(R.id.lblResultID);
         btnSalvar = findViewById(R.id.btnSalvarID);
-
         txtContent = findViewById(R.id.txtContent);
 
         // Set the string as the message text
@@ -59,16 +58,6 @@ public class activity_cad extends AppCompatActivity {
                 if (sobrenome.isEmpty()){
                     lblResultado.setText("Digite o sobrenome!"); // FIXME aqui tambem
                 }
-                String resultado = null;
-                novaLinha = nome + sobrenome;
-                try {
-                    resultado = readFromAssets(activity_cad.this,"lista.xml");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                
-                txtContent.setText("lido do arquivo: " + resultado);
-
             }
         });
 

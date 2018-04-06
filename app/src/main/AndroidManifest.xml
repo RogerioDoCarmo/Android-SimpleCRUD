@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rogeriocarmo.simplecrud">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -20,17 +20,29 @@
             </intent-filter>
         </activity>
 
-        <!--activity android:name=".activity_cad"></activity!-->
-        <!-- A declaracao a seguir faz com que o sistema Android automaticamente adicione o botão Up à barra de aplicativos !-->
-        <!-- É declarado qual é o pai logico da activity! !-->
-        <activity android:name=".activity_cad"
-            android:parentActivityName=".MainActivity" >
+        <!-- activity android:name=".activity_cad"></activity! -->
+        <!-- A declaracao a seguir faz com que o sistema Android automaticamente adicione o botão Up à barra de aplicativos ! -->
+        <!-- É declarado qual é o pai logico da activity! ! -->
+        <activity
+            android:name=".activity_cad"
+            android:label="Tela de Cadastros"
+            android:parentActivityName=".MainActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
 
+        <activity
+            android:name=".Activity_Pesquisar"
+            android:label="Tela de Pesquisas"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
     </application>
 
 </manifest>
