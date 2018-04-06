@@ -28,9 +28,16 @@ public class MainActivity extends AppCompatActivity {
   }
 
 
-    public void sendMessage(View view) {
+    public void iniciarTela_Cadastro(View view) {
         Intent intent = new Intent(this, activity_cad.class);
-        String message = "Mensagem";
+        String message = "Cadastro";
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
+    public void iniciarTela_Pesquisa(View view) {
+        Intent intent = new Intent(this, Activity_Pesquisar.class);
+        String message = "Pesquisa";
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }

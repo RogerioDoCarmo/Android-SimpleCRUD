@@ -1,0 +1,111 @@
+[33mcommit fa6c7df943a9d4937cabdc84740c074b25e42e2c[m[33m ([m[1;36mHEAD -> [m[1;32mAtualizao-leitura-txt[m[33m, [m[1;31morigin/Atualizao-leitura-txt[m[33m)[m
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Tue Apr 3 09:36:15 2018 -0300
+
+    Leitura a partir de res/raw
+    
+    Atualizada a classe FileHelper para ler utilizando getResources().OpenRawResource(R.raw.lista)
+
+[33mcommit 9727c85d5590564b16381171efc45a0af201df6d[m
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Tue Apr 3 08:48:00 2018 -0300
+
+    Atualizacao txt
+
+[33mcommit 14a82447831fcfe599a9eb9fc3cc9a81a7cd7a5b[m
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Mon Apr 2 17:19:51 2018 -0300
+
+    Edit .gitignore
+    
+    Adicionada a pasta .idea
+
+[33mcommit ce61204130be5fb5d6a5d8de83ecf9215970822f[m
+Merge: 356103a 2e0909d
+Author: Rogério Ramos Rodrigues do Carmo <rogerio.carmo02@gmail.com>
+Date:   Mon Apr 2 16:51:52 2018 -0300
+
+    Merge pull request #8 from RogerioDoCarmo/Leitura-txt-Assets
+    
+    Leitura-From-Asset!
+
+[33mcommit 2e0909d13efa07fdad08c00d1926bf1a113fb702[m
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Mon Apr 2 16:45:53 2018 -0300
+
+    Leitura-From-Asset
+    
+    Implementação de leitura de arquivo a partir da pasta assets.
+
+[33mcommit 356103a0ded6e369724752fa675dad5a29602379[m
+Merge: 1cfa3d3 a97e97b
+Author: Rogério Ramos Rodrigues do Carmo <rogerio.carmo02@gmail.com>
+Date:   Mon Apr 2 15:31:56 2018 -0300
+
+    Merge pull request #4 from RogerioDoCarmo/Testes-Arquivo-SD
+    
+    Testes arquivo sd
+
+[33mcommit a97e97b040376eb7894b3faa5f8dbbba4375a255[m
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Thu Mar 29 09:38:03 2018 -0300
+
+    Continuacao-Leitura-TXT
+    
+    Inclusão da permissão para leitura de armazenamento externo. Possui bugs
+
+[33mcommit dffc51258731654c1710e1b7ae06b5cd272a83a5[m
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Wed Mar 28 22:47:44 2018 -0300
+
+    Teste Inicial - COM ERRO
+    
+    Teste para criar e ler um arquivo .txt no cartão SD. Baseado na implementação de http://instinctcoder.com/read-and-write-text-file-in-android-studio/
+
+[33mcommit 1cfa3d33e127c270c4ccfc029ef427b48beceb79[m
+Merge: 2457aa8 389c197
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Mon Mar 26 22:34:46 2018 -0300
+
+    Merge pull request #3 from RogerioDoCarmo/Activity-Cadastro
+    
+    Criacao-activity_cad e adaptações no layout!
+
+[33mcommit 389c19743205e3e2ab9566acd71540f4c602a546[m
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Mon Mar 26 22:33:19 2018 -0300
+
+    Criacao-activity_cad
+    
+    Criação da empty activity "activity_cad" e código para iniciar essa activity a partir da activity principal!
+
+[33mcommit 2457aa8491db887e8a457fc8a786a6c175b696fc[m
+Merge: 464f72a 305c829
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Thu Mar 22 11:37:40 2018 -0300
+
+    Merge pull request #1 from RogerioDoCarmo/Desenvolvimento-Udemy
+    
+    Criacao da tela principal
+
+[33mcommit 305c829c4d7a11188e64ffef97a6336d0a2881a7[m
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Thu Mar 22 11:36:53 2018 -0300
+
+    Criacao da tela principal
+    
+    Criação da tela principal e manutenção dos arquivos dimens e strings.xml
+
+[33mcommit 464f72a0c3b25bf1edf76baaa903f67989b90b57[m
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Thu Mar 22 10:26:12 2018 -0300
+
+    Commit inicial
+    
+    Criação do Projeto.
+
+[33mcommit 3029e7e89768c85345cd28f0bddf37b095422d44[m
+Author: Rogério do Carmo <rogerio.carmo02@gmail.com>
+Date:   Thu Mar 22 09:26:19 2018 -0300
+
+    Initial commit
