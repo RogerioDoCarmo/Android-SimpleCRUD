@@ -1,18 +1,12 @@
 package com.rogeriocarmo.simplecrud;
 
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.io.IOException;
-
-import static com.rogeriocarmo.simplecrud.FileHelper.readFromAssets;
 
 public class activity_cad extends AppCompatActivity {
 

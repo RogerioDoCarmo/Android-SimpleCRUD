@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static com.rogeriocarmo.simplecrud.FileHelper.readFromAssets;
+import static com.rogeriocarmo.simplecrud.FileHelper.readFromRawAssets;
 
 public class Activity_Pesquisar extends AppCompatActivity {
 
@@ -30,7 +30,7 @@ public class Activity_Pesquisar extends AppCompatActivity {
         this.btnPesquisar = findViewById(R.id.btnPesquisarID);
 
         try {
-            this.mensagens = readFromAssets(Activity_Pesquisar.this,"lista.xml");
+            this.mensagens = readFromRawAssets(Activity_Pesquisar.this,"lista.xml");
             items = mensagens.split("\n");
         } catch (IOException e) {
             e.printStackTrace();
