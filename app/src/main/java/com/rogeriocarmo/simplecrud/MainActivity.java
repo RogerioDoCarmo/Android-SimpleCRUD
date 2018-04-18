@@ -41,5 +41,14 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+    public void iniciarTela_Alteracao(View view) {
+        Intent intent = new Intent(this, activity_alt.class);
+        String message = "Alteracao";
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
+
 }
 
