@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.IOException;
 
 public class activity_alt extends AppCompatActivity {
 
@@ -21,10 +22,14 @@ public class activity_alt extends AppCompatActivity {
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id
                 .coordinatorLayout);
 
-        saveOnDisk();
+        try {
+            saveOnDisk();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void saveOnDisk(){
+    private void saveOnDisk() throws IOException {
         String[] teste = new String[]{"Oi","Lalala"};
 
         if (FileHelper.isExternalStorageWritable()){
@@ -36,15 +41,16 @@ public class activity_alt extends AppCompatActivity {
             toast.show();
         }
 
-        File novoArquivo = FileHelper.getPrivateAlbumStorageDir(this,"GNSSlogs");
+        File novoArquivo = FileHelper.getPrivateAlbumStorageDir(this,"GNSSlogs.txt");
 
         Toast.makeText(getApplicationContext(),
-                "Espaço disponível: " + novoArquivo.getFreeSpace(),
+                "Espaço disponível: " + novoArquivo.getFreeSpace() + " bytes",
                 Toast.LENGTH_SHORT).show();
 
+        FileHelper.writeTxtFile2External(novoArquivo, teste);
 
         Snackbar snackbar = Snackbar
-                .make(coordinatorLayout, "Caminho do Storage: " + novoArquivo.getAbsolutePath(), Snackbar.LENGTH_INDEFINITE);
+                .make(coordinatorLayout, "Caminho do Storage: " + novoArquivo.getAbsolutePath(), Snackbar.LENGTH_LONG);
         snackbar.show();
 
     }

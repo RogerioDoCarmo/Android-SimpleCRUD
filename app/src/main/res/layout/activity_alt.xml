@@ -8,4 +8,12 @@
     android:layout_height="match_parent"
     tools:context=".activity_alt">
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="245dp"
+        android:ems="10"
+        android:hint="Digite um texto..."
+        android:inputType="textMultiLine"
+        android:singleLine="false" />
 </android.support.design.widget.CoordinatorLayout>
