@@ -10,15 +10,10 @@ import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import android.content.res.AssetManager;
-
-import static android.content.res.AssetManager.ACCESS_STREAMING;
+import java.io.OutputStreamWriter;
 
 /**
  * Created by Tan on 2/18/2016.
@@ -61,18 +56,35 @@ public class FileHelper {
 
 
 
-    public static File getPrivateAlbumStorageDir(Context context, String albumName) {
+    public static File getPrivateAlbumStorageDir(Context context, String albumName) throws IOException {
         // Get the directory for the app's private pictures directory.
-        File file = new File(context.getExternalFilesDir(
-                Environment.DIRECTORY_DOWNLOADS), albumName);
-        if (!file.mkdirs()) {
-//            Log.e(LOG_TAG, "Directory not created"); FIXME
+        File file = new File(context.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), albumName); // TODO
+// !file.getParentFile().mkdirs())
+        if (!file.exists()) { // fixme
+            file.mkdir();
+
+            Log.e("ERRO", "Directory not created"); // FIXME
         }
         return file;
     }
 
+    public static void writeTxtFile2External(File file, String[] content){
+        try {
+//            if (file.isFile()){
+                FileOutputStream fileOutput = new FileOutputStream(file);
+                OutputStreamWriter outputStreamWriter=new OutputStreamWriter(fileOutput);
 
+                for (int i = 0; i < content.length; i++){
+                    outputStreamWriter.write(content[i]);
+                }
 
-
+                outputStreamWriter.flush();
+                fileOutput.getFD().sync();
+                outputStreamWriter.close();
+//            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
