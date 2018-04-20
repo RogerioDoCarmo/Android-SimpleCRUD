@@ -30,7 +30,7 @@ public class activity_alt extends AppCompatActivity {
     }
 
     private void saveOnDisk() throws IOException {
-        String[] teste = new String[]{"Oi","Lalala"};
+        String[] teste = new String[]{"Bankai\n","Tensa Zangetsu xD\n"};
 
         if (FileHelper.isExternalStorageWritable()){
             Context context = getApplicationContext();
@@ -41,7 +41,7 @@ public class activity_alt extends AppCompatActivity {
             toast.show();
         }
 
-        File novoArquivo = FileHelper.getPrivateAlbumStorageDir(this,"GNSSlogs.txt");
+        File novoArquivo = FileHelper.getPrivateStorageDir(this,"BANKAI.txt");
 
         Toast.makeText(getApplicationContext(),
                 "Espaço disponível: " + novoArquivo.getFreeSpace() + " bytes",

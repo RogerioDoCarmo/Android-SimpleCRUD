@@ -56,14 +56,16 @@ public class FileHelper {
 
 
 
-    public static File getPrivateAlbumStorageDir(Context context, String albumName) throws IOException {
+    public static File getPrivateStorageDir(Context context, String fileName) throws IOException {
         // Get the directory for the app's private pictures directory.
-        File file = new File(context.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), albumName); // TODO
+        File file = null;
+        file =  new File(context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS), fileName); // TODO
 // !file.getParentFile().mkdirs())
         if (!file.exists()) { // fixme
-            file.mkdir();
+            file.getParentFile().mkdir();
+            file.createNewFile();
 
-            Log.e("ERRO", "Directory not created"); // FIXME
+            Log.i("OK", "Arquivo foi criado!!!!!!!!!!!!!"); // FIXME
         }
         return file;
     }
@@ -71,8 +73,9 @@ public class FileHelper {
     public static void writeTxtFile2External(File file, String[] content){
         try {
 //            if (file.isFile()){
-                FileOutputStream fileOutput = new FileOutputStream(file);
-                OutputStreamWriter outputStreamWriter=new OutputStreamWriter(fileOutput);
+                FileOutputStream fileOutput = null;
+                fileOutput = new FileOutputStream(file);
+                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutput);
 
                 for (int i = 0; i < content.length; i++){
                     outputStreamWriter.write(content[i]);
